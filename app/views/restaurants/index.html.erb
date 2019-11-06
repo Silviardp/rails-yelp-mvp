@@ -1,0 +1,27 @@
+<nav class="navbar navbar-dark bg-dark">
+ <!--  <a class="navbar-brand" href="/restaurants">
+    <%# image_tag "yelp.jpeg" %>
+  </a> -->
+<%= link_to new_restaurant_path do %>
+<form class="form-inline my-2 my-lg-0">
+<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Add restaurant</button>
+<% end %>
+</form>
+</nav>
+
+<div class="container text-center p-5">
+  <h1>Restaurants</h1>
+</div>
+<div class="container jumbotron align-items-center">
+  <% @restaurants.each do |restaurant| %>
+  <%= link_to restaurant_path(restaurant) do %>
+      <h3><%= restaurant.name %></h3>
+    <% end %>
+    <p><%= restaurant.address %></p>
+    <p><%= restaurant.phone_number %></p>
+    <p class="font-weight-bold"><%= restaurant.category %></p>
+  <% end %>
+</div>
+
+
+
